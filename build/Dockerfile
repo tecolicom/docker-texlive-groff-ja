@@ -9,4 +9,6 @@ RUN apt-get update \
     ghostscript fig2dev \
     bmake \
   && rm -rf /var/lib/apt/lists/*
+RUN cpanm -n \
+    App::Greple
 CMD [ "bash" ]
