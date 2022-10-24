@@ -1,0 +1,12 @@
+FROM paperist/texlive-ja:latest
+ENV PATH /usr/local/bin/texlive:$PATH
+WORKDIR /workdir
+RUN apt-get update \
+  && apt-get install -y \
+    perl cpanminus carton gcc \
+    wget \
+    groff \
+    ghostscript fig2dev \
+    bmake \
+  && rm -rf /var/lib/apt/lists/*
+CMD [ "bash" ]
