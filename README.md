@@ -34,6 +34,14 @@ $ docker run --rm -it -v $PWD:/workdir utashiro/texlive-groff-ja:latest \
     sh -c 'latexmk -C main.tex && latexmk main.tex && latexmk -c main.tex'
 ```
 
+## SEE ALSO
+
+- https://hub.docker.com/r/utashiro/texlive-groff-ja
+- https://github.com/kaz-utashiro/docker-texlive-groff-ja
+
+- https://hub.docker.com/r/paperist/texlive-ja
+- https://github.com/Paperist/texlive-ja
+
 ## License / ライセンス
 
 MIT ©︎ 2022 Kaz Utashiro
