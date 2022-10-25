@@ -3,12 +3,11 @@ ENV PATH /usr/local/bin/texlive:$PATH
 WORKDIR /workdir
 RUN apt-get update \
   && apt-get install -y \
-    perl cpanminus carton gcc \
+    perl cpanminus carton gcc nodejs \
     wget \
     groff \
     ghostscript fig2dev \
     bmake \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm -n \
-    App::Greple
+RUN cpanm -n App::Greple
 CMD [ "bash" ]
