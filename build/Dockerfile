@@ -9,5 +9,8 @@ RUN apt-get update \
     ghostscript fig2dev \
     bmake \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm -n App::Greple
+RUN cpanm -n \
+    App::Greple \
+    Unicode::EastAsianWidth \
+    JSON
 CMD [ "bash" ]
