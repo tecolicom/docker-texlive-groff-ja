@@ -17,14 +17,14 @@ Docker Hub もしくは GitHub Container Registry からインストールでき
 ### Docker Hub
 
 ```bash
-docker pull utashiro/texlive-groff-ja:latest
+docker pull tecolicom/texlive-groff-ja:latest
 ```
 
 ### GitHub Container Registry
 
 ```bash
 docker pull ghcr.io/kaz-utashiro/texlive-groff-ja:latest
-docker image tag ghcr.io/kaz-utashiro/texlive-groff-ja:latest kaz-utashiro/texlive-groff-ja:latest
+docker image tag ghcr.io/kaz-utashiro/texlive-groff-ja:latest tecolicom/texlive-groff-ja:latest
 ```
 
 ## Usage / 使い方
