@@ -30,4 +30,6 @@ jobs:
           push: true
           tags: |
             tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
+            tecolicom/texlive-groff-ja:latest
             ghcr.io/tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
+            ghcr.io/tecolicom/texlive-groff-ja:latest
