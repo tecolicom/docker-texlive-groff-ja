@@ -23,8 +23,8 @@ docker pull tecolicom/texlive-groff-ja:latest
 ### GitHub Container Registry
 
 ```bash
-docker pull ghcr.io/kaz-utashiro/texlive-groff-ja:latest
-docker image tag ghcr.io/kaz-utashiro/texlive-groff-ja:latest tecolicom/texlive-groff-ja:latest
+docker pull ghcr.io/tecolicom/texlive-groff-ja:latest
+docker image tag ghcr.io/tecolicom/texlive-groff-ja:latest tecolicom/texlive-groff-ja:latest
 ```
 
 ## Usage / 使い方
@@ -37,7 +37,7 @@ $ docker run --rm -it -v $PWD:/workdir utashiro/texlive-groff-ja:latest \
 ## SEE ALSO
 
 - https://hub.docker.com/r/utashiro/texlive-groff-ja
-- https://github.com/kaz-utashiro/docker-texlive-groff-ja
+- https://github.com/tecolicom/docker-texlive-groff-ja
 
 - https://hub.docker.com/r/paperist/texlive-ja
 - https://github.com/Paperist/texlive-ja

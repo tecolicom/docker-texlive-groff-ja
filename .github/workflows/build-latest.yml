@@ -29,7 +29,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            tecolicom/texlive-groff-ja:latest
             tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
-            ghcr.io/kaz-utashiro/texlive-groff-ja:latest
-            ghcr.io/kaz-utashiro/texlive-groff-ja:v1.${{ github.run_number }}
+            ghcr.io/tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
