@@ -23,6 +23,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set version
+        run: echo NEW_VERSION=v1.${{ github.run_number }} >> $GITHUB_ENV
+      - name: Set git tag
+        run: |
+          git tag $NEW_VERSION
+          git push --tags
       - name: Build Docker image
         uses: ./.github/actions/build/
         with:
@@ -30,7 +36,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
+            tecolicom/texlive-groff-ja:${{ env.NEW_VERSION }}
             tecolicom/texlive-groff-ja:latest
-            ghcr.io/tecolicom/texlive-groff-ja:v1.${{ github.run_number }}
+            ghcr.io/tecolicom/texlive-groff-ja:${{ env.NEW_VERSION }}
             ghcr.io/tecolicom/texlive-groff-ja:latest
