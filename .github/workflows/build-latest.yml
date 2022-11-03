@@ -27,23 +27,17 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set Version and Tag
+      - name: Set Version and Package
         run: |
-          export NEW_VERSION=v1.${{ github.run_number }}
-          export PACKAGE=tecolicom/texlive-groff-ja
-          (
-            echo NEW_VERSION=$NEW_VERSION
-            echo PACKAGE=$PACKAGE
-          ) >> $GITHUB_ENV
-          git tag $NEW_VERSION
-          git push --tags
+          sed 's/^ *//' << END >> $GITHUB_ENV
+              NEW_VERSION=v1.${{ github.run_number }}
+              PACKAGE=tecolicom/texlive-groff-ja
+          END
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Build and push
-        uses: docker/build-push-action@v3
+      # Build Docker Image
+      - uses: docker/setup-qemu-action@v2
+      - uses: docker/setup-buildx-action@v2
+      - uses: docker/build-push-action@v3
         with:
           context: .
           platforms: linux/amd64,linux/arm64
@@ -53,3 +47,9 @@ jobs:
             ${{ env.PACKAGE }}:latest
             ghcr.io/${{ env.PACKAGE }}:${{ env.NEW_VERSION }}
             ghcr.io/${{ env.PACKAGE }}:latest
+
+      - name: Set Tag
+        run: |
+          git tag $NEW_VERSION
+          git push --tags
+
