@@ -13,4 +13,5 @@ RUN cpanm -n \
     App::Greple \
     Unicode::EastAsianWidth \
     JSON
+COPY inputrc $HOME/.inputrc
 CMD [ "bash" ]
