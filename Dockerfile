@@ -11,7 +11,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm -n \
     App::Greple \
+    Getopt::EX::Hashed \
     Unicode::EastAsianWidth \
-    JSON
+    Moo JSON
 COPY inputrc $HOME/.inputrc
 CMD [ "bash" ]
