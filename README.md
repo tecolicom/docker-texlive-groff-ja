@@ -30,13 +30,13 @@ docker image tag ghcr.io/tecolicom/texlive-groff-ja:latest tecolicom/texlive-gro
 ## Usage / 使い方
 
 ```bash
-$ docker run --rm -it -v $PWD:/workdir utashiro/texlive-groff-ja:latest \
+$ docker run --rm -it -v $PWD:/workdir tecolicom/texlive-groff-ja:latest \
     sh -c 'latexmk -C main.tex && latexmk main.tex && latexmk -c main.tex'
 ```
 
 ## SEE ALSO
 
-- https://hub.docker.com/r/utashiro/texlive-groff-ja
+- https://hub.docker.com/r/tecolicom/texlive-groff-ja
 - https://github.com/tecolicom/docker-texlive-groff-ja
 
 - https://hub.docker.com/r/paperist/texlive-ja
