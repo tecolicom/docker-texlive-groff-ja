@@ -1,5 +1,6 @@
 FROM paperist/texlive-ja:latest
-ENV PATH /usr/local/bin/texlive:$PATH
+ENV PATH=/usr/local/bin/texlive:$PATH
+ENV HOME=/root
 WORKDIR /workdir
 RUN apt-get update \
   && apt-get install -y \
@@ -8,6 +9,7 @@ RUN apt-get update \
     groff \
     ghostscript fig2dev \
     bmake \
+    less \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm -n \
     App::Greple \
