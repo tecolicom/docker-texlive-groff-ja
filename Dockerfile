@@ -11,10 +11,7 @@ RUN apt-get update \
     bmake \
     less \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm -n \
-    App::Greple \
-    Getopt::EX::Hashed \
-    Unicode::EastAsianWidth \
-    Moo JSON
+RUN cpanm --installdeps -nq \
+    https://github.com/kaz-utashiro/App-Greple-fbsd2.git
 COPY inputrc $HOME/.inputrc
 CMD [ "bash" ]
