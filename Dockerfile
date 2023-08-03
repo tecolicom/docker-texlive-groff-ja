@@ -5,7 +5,7 @@ WORKDIR /workdir
 RUN apt-get update \
   && apt-get install -y \
     perl cpanminus carton gcc nodejs \
-    wget \
+    git wget \
     groff \
     ghostscript fig2dev \
     bmake \
