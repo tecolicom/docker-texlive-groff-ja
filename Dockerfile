@@ -7,7 +7,7 @@ RUN apt-get update \
     perl cpanminus carton gcc nodejs \
     git wget \
     groff \
-    ghostscript fig2dev \
+    inkscape ghostscript fig2dev \
     bmake \
     less \
   && rm -rf /var/lib/apt/lists/*
