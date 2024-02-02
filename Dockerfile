@@ -1,12 +1,18 @@
 FROM paperist/texlive-ja:latest
 ENV PATH=/usr/local/bin/texlive:$PATH
 ENV HOME=/root
+WORKDIR /workdir
+
 ENV LANG=ja_JP.UTF-8
 ENV LC_CTYPE=ja_JP.UTF-8
-WORKDIR /workdir
+RUN apt-get update && \
+    apt-get -y upgrade \
+    && apt-get install -y locales \
+    && locale-gen ja_JP.UTF-8 \
+    && echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc
+
 RUN apt-get update \
   && apt-get install -y \
-    locales \
     perl cpanminus carton gcc nodejs \
     git wget \
     groff \
