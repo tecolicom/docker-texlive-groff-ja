@@ -8,7 +8,8 @@ ENV LC_CTYPE=ja_JP.UTF-8
 RUN apt-get update && \
     apt-get -y upgrade \
     && apt-get install -y locales \
-    && locale-gen ja_JP.UTF-8 \
+    && echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen \
+    && locale-gen \
     && echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc
 
 RUN apt-get update \
