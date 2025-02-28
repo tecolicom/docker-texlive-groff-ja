@@ -18,6 +18,7 @@ RUN apt-get update \
     groff \
     inkscape ghostscript fig2dev \
     bmake \
+    fonts-noto fonts-noto-cjk fonts-noto-cjk-extra \
     && rm -rf /var/lib/apt/lists/* \
     && :
 
