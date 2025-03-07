@@ -19,6 +19,8 @@ RUN apt-get update \
     inkscape ghostscript fig2dev \
     bmake \
     fonts-noto fonts-noto-cjk fonts-noto-cjk-extra \
+    poppler-utils \
+    pdftk-java \
     && rm -rf /var/lib/apt/lists/* \
     && :
 
